@@ -1,29 +1,89 @@
-#want to pick a shirt and pants that go together
-# User enters occasion (class, rehearsal), output is 2-3 components of an outfit
+# Picks a shirt, pants, and jacket for class or rehearsal
 
 import random
 
-CPants = ['Dark Wash Flare Jeans', 'Blue Yoga Pants', 'Berry Leggings', 'Purple Sweats']
-CTops = ['Blue/White Striped Shirt', 'Penn State Shirt', 'Penn State Sweatshirt']
-RPants = ['Black Tulip Shorts', 'Purple Shorts', 'Berry Leggings']
-RTops = ['Floral Longline Sports Bra', 'Blue Tank']
+CPants = ['Dark Wash Flare Jeans', 
+          'Medium Wash Flare Jeans', 
+          'Green Corduroy Jeans', 
+          'Charcoal Jeans', 
+          'Gray Yoga Pants' 
+          'Blue Yoga Pants', 
+          'Green Leggings', 
+          'Blue Pocket Leggings', 
+          'Blue Striped Leggings', 
+          'Berry Leggings', 
+          'Navy Joggers', 
+          'Purple Sweats',
+          'Brown Shorts',
+          'Gray Champion Shorts'
+          'White Tennis Skirt'
+         ]
+
+
+CTops = ['Blue White Striped Shirt', 
+         'Brown Blue Floral Tank', 
+         'Floral Marshalls Short Sleeve', 
+         'Ribbed Black Tank', 
+         'Fitted Blue Short Sleeve Crop', 
+         'Academia Sweater', 
+         'Fluffy Pink Sweater', 
+         'Navy Sweater', 
+         'Black Collared Long Sleeve', 
+         'Blue Mock Neck Sweater', 
+         'Blue Floral Long Sleeve', 
+         'Purple Floral Long Sleeve', 
+         'Hard Rock Short Sleeve', 
+         'PSU Short Sleeve', 
+         'PSU Sweatshirt', 
+         'Pink Vans Short Sleeve', 
+         'Green Puff Sleeve Crop Top', 
+         'Blue Tillys Crop'
+        ]
+
+RPants = ['Blue Fabric Shorts',
+          'Olive Fabric Shorts',
+          'Gray Fabric Shorts',
+          'Black Tulip Shorts',
+          'Purple Target Shorts',
+          'Black Target Shorts',
+          'Pink Nike Shorts',
+          'Gray Champion Shorts'
+         ]
+
+RTops = ['Black Longline Sports Bra',
+         'Floral Longline Sports Bra',
+         'Blue White Longline Sports Bra',
+         'Blue Swirl Long Sports Bra',
+         'Blue Tank',
+         'Gray Tank',
+         'White Tank',
+         'Black Tank'
+        ]
+
+Outerwear = ['Brown Plaid Button Up', 
+             'Green Button Up', 
+             'Blue Velvet Button Up', 
+             'Light Blue Button Up',
+             'Deep Blue Windbreaker', 
+             'Black Windbreaker',
+             'Track Jacket',
+             'Mid Sleeve Light Blue Jacket'
+            ]
 
 occasion = input("Rehearsal (R) or Class (C)? ")
+if occasion == 'C':
+  T = random.choice(CTops)
+  P = random.choice(CPants)
 if occasion == 'R':
-  P = random.choice(RPants)
   T = random.choice(RTops)
-  print(T, '+', P)
+  P = random.choice(RPants)
+O = random.choice(Outerwear)
+print(T, '+', P, '+', O)
 
-"""DarkWideJns = {"class"}
-BluYoga = {"class"}
-BrryLeg = {"class", "rehearsal"}
-PrplSweats = {"class"}
-
-PantsList = [DarkWideJns, BluYoga, BrryLeg, PrplSweats]
-
-for pants in PantsList:
-  if ("rehearsal" in pants):
-    i = PantsList.index(pants)
-    # print """
-
-
+''' 
+Additions: 
+  try again input
+  __ outfits with no repeat items
+  based on weather
+  no button ups with sweaters, etc.
+'''
