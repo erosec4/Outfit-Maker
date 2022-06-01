@@ -6,7 +6,7 @@ CPants = ['Dark Wash Flare Jeans',
           'Medium Wash Flare Jeans', 
           'Green Corduroy Jeans', 
           'Charcoal Jeans', 
-          'Gray Yoga Pants' 
+          'Gray Yoga Pants',
           'Blue Yoga Pants', 
           'Green Leggings', 
           'Blue Pocket Leggings', 
@@ -15,7 +15,7 @@ CPants = ['Dark Wash Flare Jeans',
           'Navy Joggers', 
           'Purple Sweats',
           'Brown Shorts',
-          'Gray Champion Shorts'
+          'Gray Champion Shorts',
           'White Tennis Skirt'
          ]
 
@@ -71,19 +71,24 @@ Outerwear = ['Brown Plaid Button Up',
             ]
 
 occasion = input("Rehearsal (R) or Class (C)? ")
+fits = int(input("How many outfits? "))
+#while fits >= 1:
 if occasion == 'C':
-  T = random.choice(CTops)
-  P = random.choice(CPants)
+  T = random.sample(CTops, k=fits)
+  P = random.sample(CPants, k=fits)    
 if occasion == 'R':
-  T = random.choice(RTops)
-  P = random.choice(RPants)
-O = random.choice(Outerwear)
-print(T, '+', P, '+', O)
+  T = random.sample(RTops, k=fits)
+  P = random.sample(RPants, k=fits)
+O = random.choices(Outerwear, k=fits)
+while fits >= 1:
+  print(T[fits-1], '+', P[fits-1], '+', O[fits-1])
+  fits -= 1
+
 
 ''' 
 Additions: 
-  try again input
-  __ outfits with no repeat items
-  based on weather
+  __ outfits with no repeat items (DONE)
+  try again input vs have a nice day
+  based on weather (class/object)
   no button ups with sweaters, etc.
 '''
